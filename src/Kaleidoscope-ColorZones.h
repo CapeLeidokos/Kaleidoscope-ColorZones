@@ -42,7 +42,7 @@
    } /* namespace plugin */                                             __NL__ \
    } /* namespace kaleidoscope */
 
-#define COLOR_ZONES_SPARSE_ENTRY(ROW, COL, INDEX)                              \
+#define COLOR_ZONES_MEMBER(ROW, COL, INDEX)                                    \
    XKEYMAP_SPARSE_ENTRY(ROW, COL, INDEX)
    
 #define COLOR_ZONES_SPARSE(...)                                                \

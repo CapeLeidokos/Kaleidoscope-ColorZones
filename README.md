@@ -97,6 +97,23 @@ focus-test remote_control 1 <zone ID>
 
 See the README of [Kaleidoscope-RemoteControl](https://github.com/CapeLeidokos/Kaleidoscope-RemoteControl.git) for more information on remote controlling Kaleidoscope.
 
+## Color zones sparse definitions
+
+If only few keys are supposed to be part of color zones, the definition using
+`COLOR_ZONES_STACKED` would waste quite a lot of PROGMEM. 
+In such a case it makes more sense to use the `COLOR_ZONES_SPARSE` function macro
+instead of `COLOR_ZONES_STACKED`, e.g. as follows.
+
+```cpp
+...
+COLOR_ZONES_SPARSE(
+   COLOR_ZONES_MEMBER(0, 2, 3) // row = 0, col = 2, zone id = 3
+   COLOR_ZONES_MEMBER(1, 2, 3) // row = 1, col = 2, zone id = 3
+   COLOR_ZONES_MEMBER(3, 2, 1) // row = 3, col = 2, zone id = 1
+   ...
+)
+```
+
 ## Requirements
 
 Kaleidoscope-ColorZones relies on [Kaleidoscope-XKeymaps](https://github.com/CapeLeidokos/Kaleidoscope-XKeymaps.git) for the definition of color zones.
