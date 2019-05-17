@@ -27,22 +27,20 @@
 // Every color zone is define by a unique ID. Every key is assigned the 
 // zone it belongs to.
 //
-COLOR_ZONES(
-  COLOR_ZONES_STACKED(
-     0, 0, 0, 0, 0, 0, 0,
-     0, 1, 1, 1, 0, 0, 0,
-     0, 0, 0, 0, 0, 0,
-     0, 0, 0, 2, 2, 2, 0,
-     0, 0, 0, 0,
-     0,
+COLOR_ZONES_STACKED(
+   0, 0, 0, 0, 0, 0, 0,
+   0, 1, 1, 1, 0, 0, 0,
+   0, 0, 0, 0, 0, 0,
+   0, 0, 0, 2, 2, 2, 0,
+   0, 0, 0, 0,
+   0,
 
-     0, 0, 0, 0, 0, 0, 0,
-     0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0,
-     0, 0, 0, 0, 0, 0, 0,
-     0, 0, 0, 0,
-     0 
-  ) 
+   0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0,
+   0 
 )
 
 // Remote control zone coloring.

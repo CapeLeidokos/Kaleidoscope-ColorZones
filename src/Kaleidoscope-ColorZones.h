@@ -19,13 +19,17 @@
 #include "Kaleidoscope.h"
 #include "Kaleidoscope-XKeymaps.h"
 
-#define COLOR_ZONES(...)                                                       \
+#define COLOR_ZONES_STACKED(...)                                               \
    XKEYMAPS_GENERIC(                                                           \
       color_zones,                                                             \
       uint8_t,                                                                 \
       0,                                                                       \
       0,                                                                       \
-      __VA_ARGS__                                                              \
+      XKEYMAP_STACKED_GENERIC(                                                 \
+         uint8_t,                                                              \
+         0 /* keymap id */,                                                    \
+         __VA_ARGS__                                                           \
+      )                                                                        \
    )                                                                           \
    namespace kaleidoscope {                                             __NL__ \
    namespace plugin {                                                   __NL__ \
@@ -37,25 +41,33 @@
    } /* namespace color_zones */                                        __NL__ \
    } /* namespace plugin */                                             __NL__ \
    } /* namespace kaleidoscope */
-   
-   
-#define COLOR_ZONES_STACKED(...)                                               \
-   XKEYMAP_STACKED_GENERIC(                                                    \
-      uint8_t,                                                                 \
-      0 /* keymap id */,                                                       \
-      __VA_ARGS__                                                              \
-   )
-   
+
 #define COLOR_ZONES_SPARSE_ENTRY(ROW, COL, INDEX)                              \
    XKEYMAP_SPARSE_ENTRY(ROW, COL, INDEX)
    
-#define COLOR_ZONES_SPARSE(DEFAULT_INDEX, ...)                                 \
-   XKEYMAP_SPARSE_GENERIC(                                                     \
+#define COLOR_ZONES_SPARSE(...)                                                \
+   XKEYMAPS_GENERIC(                                                           \
+      color_zones,                                                             \
       uint8_t,                                                                 \
-      0 /* keymap id */,                                                       \
-      DEFAULT_INDEX,                                                           \
-      __VA_ARGS__                                                              \
-   )
+      0,                                                                       \
+      0,                                                                       \
+      XKEYMAP_SPARSE_GENERIC(                                                  \
+         uint8_t,                                                              \
+         0 /* keymap id */,                                                    \
+         DEFAULT_INDEX,                                                        \
+         __VA_ARGS__                                                           \
+      )                                                                        \
+   )                                                                           \
+   namespace kaleidoscope {                                             __NL__ \
+   namespace plugin {                                                   __NL__ \
+   namespace color_zones {                                              __NL__ \
+                                                                        __NL__ \
+      uint8_t zoneIDFromKeyAddr(uint8_t row, uint8_t col) {             __NL__ \
+         return kaleidoscope::xkeymaps::color_zones::valueFromKeymap(0, row, col);__NL__ \
+      }                                                                 __NL__ \
+   } /* namespace color_zones */                                        __NL__ \
+   } /* namespace plugin */                                             __NL__ \
+   } /* namespace kaleidoscope */
    
 namespace kaleidoscope {
 namespace plugin {
