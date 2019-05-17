@@ -113,6 +113,8 @@ COLOR_ZONES_SPARSE(
    ...
 )
 ```
+Any keys that are not assigned a value in the sparse definition will have
+zone ID 0 assigned automatically.
 
 ## Requirements
 

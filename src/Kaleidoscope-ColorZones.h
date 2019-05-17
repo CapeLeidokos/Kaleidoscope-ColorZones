@@ -19,6 +19,8 @@
 #include "Kaleidoscope.h"
 #include "Kaleidoscope-XKeymaps.h"
 
+// For all the following macros, 0 is the default zone ID.
+
 #define COLOR_ZONES_STACKED(...)                                               \
    XKEYMAPS_GENERIC(                                                           \
       color_zones,                                                             \
