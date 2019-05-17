@@ -61,8 +61,7 @@ void loop() {
 This example demonstrates how two color zones 1 and 2 can be defined by means
 of assigning color zone IDs to keys in a keymap-like fashion.
 
-Via the remote control interface, using the `focus-test` tool (only available for unixoid OS) colors can be assigned to the individual 
-zones, e.g.
+Via the remote control interface, colors can be assigned to the individual zones, e.g. as follows. This uses the `focus-test` tool that lives in the `bin` directory of the Kaleidoscope repo (currently only available for Linux/MacOS).
 
 ```
 # Assign red (rgb = 255 0 0) to keys of zone 1
