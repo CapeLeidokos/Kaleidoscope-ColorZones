@@ -97,4 +97,6 @@ To clear a zone, only the zone ID has to be passed as second argument (after the
 focus-test remote_control 1 <zone ID>
 ```
 
+## Requirements
 
+Kaleidoscope-ColorZones relies on [Kaleidoscope-XKeymaps](https://github.com/CapeLeidokos/Kaleidoscope-XKeymaps.git) for the definition of color zones.
